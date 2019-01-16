@@ -1,0 +1,28 @@
+import { Player } from 'src/app/models/player';
+
+export class Team{
+    playerNames:Array<Player>;
+
+    constructor()
+    {
+        this.playerNames=[];
+        for(let index=0; index<11; index++)
+        {
+            const player=new Player();
+            this.playerNames.push (player);
+        }
+    }
+    
+    isTeamComplete():boolean{
+
+        if(this.playerNames.length===11)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    getPlayer(){
+        return this.playerNames;
+    }
+}
