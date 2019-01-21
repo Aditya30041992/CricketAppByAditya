@@ -25,6 +25,7 @@ export class DefinedteamsComponent implements OnInit {
   onStartButtonClick(){
     if(this.matchService.getMatch().getTeam1().isTeamComplete()){
       this.matchService.setMatchState();
+      this.matchService.getMatchstate();
       this.router.navigate(['/admin/innings'], { relativeTo:this.route });
     }
   }

@@ -8,9 +8,9 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+  
   constructor(private matchService:MatchService,private router:Router,private route:ActivatedRoute) { } 
-
+  
   ngOnInit() {
     switch(this.matchService.getMatchstate())
     {
@@ -22,9 +22,9 @@ export class AdminComponent implements OnInit {
       break;
       case this.matchService.MATCH_STATE_TEAMS_DEFINED:
       this.router.navigate(['inngings'], { relativeTo: this.route });
-    
+      break;
     }
     
   }
-
+  
 }

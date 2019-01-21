@@ -6,23 +6,23 @@
                 <div ng-controller="MyCtrl">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" placeholder="Enter name of Team 1"
-                            [(ngModel)]="teamOneName" >
+                            <input type="text" name="name" class="form-control"   placeholder="Enter name of Team 1"
+                            [(ngModel)]="teamOneName" value="Add Question">
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" placeholder="Enter name of Team 2" 
-                            [(ngModel)]="teamTwoName" >
+                            <input type="text"  name="name" class="form-control" placeholder="Enter name of Team 2" 
+                            [(ngModel)]="teamTwoName" value="Add Question">
                         </div>
                         <div class="form-group col-md-6">
                             <select class="browser-default custom-select ml-0" [(ngModel)]="tossWinby">
-                                <!-- <option selected>select Toss</option> -->
-                                <option selected> {{teamOneName}}</option>
+                                <option   [ngValue]="undefined" hidden selected> Please Select Team </option>
+                                <option > {{teamOneName}}</option>
                                 <option > {{teamTwoName}}</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <select class="browser-default custom-select mr-sm-2" [(ngModel)]="decision" >
-                                <!-- <option selected>select Bat/Bowl</option> -->
+                                    <option [ngValue]="undefined" hidden selected> Please Select Bat/Bowl </option>
                                 <option value="1" selected>Batting</option>
                                 <option value="2">Bowling</option>
                             </select>
@@ -33,12 +33,13 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button   type="button" class="btn btn-danger col-md-12" (click)="onClearbuttonClick()">Clear</button>
+                            <button    type="button" class="btn btn-danger col-md-12" (click)="onClearbuttonClick()">Clear</button>
                         </div>
                         <div class="col">
                             <button   type="button" class="btn btn-primary col-md-12" (click)="onDefineTeamsClick()" >Define Teams</button>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

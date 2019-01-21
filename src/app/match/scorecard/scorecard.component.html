@@ -1,3 +1,24 @@
-<p>
-  scorecard works!
-</p>
+<table class="table table-striped">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Batsman</th>
+        <th scope="col"></th>
+        <th scope="col">Run</th>
+        <th scope="col">Ball</th>
+        <th scope="col">4s</th>
+        <th scope="col">6s</th>
+        <th scope="col">Strike Rate</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let commentry of matchService.getMatch().getCommentry().reverse()" >
+        <td scope="row"> {{commentry.getOnStrikeBatsmanName()}} </td>
+        <td></td>
+        <td>{{commentry.getRunsPerBall()}}</td>
+        <td>{{commentry.getBalls()}}</td>
+        <td></td>
+        <td></td>
+        <td>{{commentry.getStrikeBatsman()}} To {{commentry.getCurrentBowler()}}-{{commentry.getDescriptionForBall()}}</td>
+      </tr>
+    </tbody>       
+  </table>

@@ -8,11 +8,11 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./match.component.css']
 })
 export class MatchComponent implements OnInit {
-
+  
   constructor() { }
-
+  
   ngOnInit() {
-   
+    
   }
-
+  
 }

@@ -18,14 +18,28 @@ export class NewmatchComponent implements OnInit {
 
   ngOnInit() {
   }
-  onDefineTeamsClick(){
-    this.matchService.getMatch().setTeamName(this.teamOneName,this.teamTwoName);
+
+  onDefineTeamsClick() {
+    if((this.tossWinby==this.teamOneName) && (this.decision==1) ){
+      this.matchService.getMatch().setTeamName(this.teamOneName,this.teamTwoName);
+    }
+    if((this.tossWinby==this.teamTwoName) && (this.decision==1)) {
+      this.matchService.getMatch().setTeamName(this.teamTwoName,this.teamOneName);
+    }
+    if((this.tossWinby==this.teamOneName) && (this.decision==2) ){
+      this.matchService.getMatch().setTeamName(this.teamTwoName,this.teamOneName);
+    }
+    if((this.tossWinby==this.teamTwoName) && (this.decision==2)) {
+      this.matchService.getMatch().setTeamName(this.teamOneName,this.teamTwoName);
+    }
+
     this.matchService.getMatch().setTossWinbyTeam(this.tossWinby,this.decision);
     this.matchService.getMatch().setNumbersOfOvers(this.numberOfOvers);
     this.matchService.setMatchState();
-    this.matchService.getMatchstate();
     this.router.navigate(['/admin/defineteams'], { relativeTo:this.route });
+    
   }
+  
   
   onClearbuttonClick(){
     this.teamOneName=null;
@@ -34,5 +48,6 @@ export class NewmatchComponent implements OnInit {
     this.decision = null;
     this.numberOfOvers = null;
   }
+
 
 }

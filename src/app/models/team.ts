@@ -1,8 +1,8 @@
-import { Player } from 'src/app/models/player';
+import { Player } from './player';
 
 export class Team{
-    playerNames:Array<Player>;
-
+    private playerNames:Array<Player>;
+    
     constructor()
     {
         this.playerNames=[];
@@ -13,16 +13,18 @@ export class Team{
         }
     }
     
-    isTeamComplete():boolean{
-
+    isTeamComplete():boolean {
+        
         if(this.playerNames.length===11)
         {
             return true;
         }
         return false;
     }
-
-    getPlayer(){
+    
+    getPlayerNames(){
         return this.playerNames;
     }
+    
+    
 }

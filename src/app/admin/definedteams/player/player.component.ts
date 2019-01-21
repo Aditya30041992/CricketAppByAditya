@@ -16,6 +16,7 @@ export class PlayerComponent implements OnInit {
   setPlayerName(event){
      const element:HTMLInputElement = event.target;
      this.player.setPlayerName(element.value);
+     console.log(element.value);
    }
 
   ngOnInit() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatchService } from 'src/app/services/match.service';
 
 @Component({
   selector: 'app-commentry',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public matchService:MatchService) { }
 
   ngOnInit() {
   }

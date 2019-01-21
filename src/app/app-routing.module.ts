@@ -5,10 +5,8 @@ import { NewmatchComponent } from './admin/newmatch/newmatch.component';
 import { MatchComponent } from './match/match.component';
 import { CommentryComponent } from './match/commentry/commentry.component';
 import { ScorecardComponent } from './match/scorecard/scorecard.component';
-import { defineComponent } from '@angular/core/src/render3';
 import { DefinedteamsComponent } from './admin/definedteams/definedteams.component';
 import { InningsComponent } from './admin/innings/innings.component';
-import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'scorecard', pathMatch: 'full' },

@@ -1,3 +1,19 @@
-<p>
-  commentry works!
-</p>
+<div class="col-sm-3 col-md-6">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Over</th>
+        <th scope="col">Runs On Ball</th>
+        <th scope="col">Commentry</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>{{ matchService.getMatch().getInningFinshedMessage() }} </tr>
+      <tr *ngFor="let commentry of matchService.getMatch().getCommentry().reverse()">
+        <td scope="row"> {{ commentry.getNumberOfOvers() }}.{{ commentry.getBalls() }}</td>
+        <td>{{ commentry.getRunsPerBall() }}</td>
+        <td>{{ commentry.getCommentry() }}</td> 
+      </tr>
+    </tbody>
+  </table>
+</div>

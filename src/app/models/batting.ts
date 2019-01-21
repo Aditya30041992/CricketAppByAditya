@@ -5,44 +5,50 @@ export class Batting{
     private out:string;
     private batsmanOnStrike:boolean;
     private bastsmanOnNonstrike:boolean;
-    private symbolForBatsmanOnStrike:symbol;
-
-    constructor(){
+    
+    
+    constructor() {
         this.didNotBat=true;
     }
-
-    startBatting(){
+    
+    startBatting() {
         this.didNotBat=false;
         this.balls=0;
         this.runs=0;
         this.out='Not Out';
     }
-    playedNoRun(){
+    
+    playedNoRun() {
         this.runs;
         this.balls++;
     }
-    playedSingleRun(){
+    
+    playedSingleRun() {
         this.runs++;
         this.balls++;
     }
-    playedDoubleRun(){
+    
+    playedDoubleRun() {
         this.runs+=2;
         this.balls++;
     }
-    playedThreeRun(){
+    
+    playedThreeRun() {
         this.runs+=3;
         this.balls++;
     }
-    playedFourRun(){
+    
+    playedFourRun() {
         this.runs+=4;
         this.balls++;
     }
-    playedSixRun(){
+    
+    playedSixRun() {
         this.runs+=6;
         this.balls++;
     }
-    playerOutOnBall(){
+    
+    playerOutOnBall() {
         this.balls++;
     }
-
 }
